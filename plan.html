@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhaseWise AI | Four-Day Team Board</title>
+  <style>
+    :root {
+      --bg: #191919;
+      --side: #202020;
+      --panel: #1d1d1d;
+      --panel-soft: #232323;
+      --hover: #2a2a2a;
+      --line: #343434;
+      --text: #e7e7e7;
+      --muted: #a0a0a0;
+      --faint: #707070;
+      --teal: #39b7a3;
+      --blue: #70b8ec;
+      --yellow: #e5b95f;
+      --green: #70ce91;
+      --purple: #b89bea;
+      --red: #ef8585;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 30px 5vw 22px;
+      background: var(--side);
+      border-bottom: 1px solid var(--line);
+    }
+    header h1 { margin: 0 0 4px; font-size: clamp(25px, 3.5vw, 36px); letter-spacing: -.02em; }
+    header p { margin: 0; color: var(--muted); }
+
+    main { width: min(1180px, 92vw); margin: 28px auto 55px; }
+    h2 { margin: 38px 0 10px; font-size: 23px; letter-spacing: -.01em; }
+    h3 { margin: 0; font-size: 17px; font-weight: 600; }
+    .day-description { margin: 3px 0 12px; color: var(--muted); }
+
+    .day-card {
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 7px;
+    }
+    .day-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--line);
+      background: var(--panel-soft);
+    }
+    .day-title span { color: var(--faint); font-size: 12px; }
+
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      min-width: 820px;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+    th, td {
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+    th {
+      color: var(--muted);
+      background: #1a1a1a;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+    tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: var(--hover); }
+    td:first-child { width: 105px; font-weight: 600; white-space: nowrap; }
+    td:nth-child(2) { color: var(--muted); }
+    td.files { color: var(--teal); font: 11px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    td.files code { display: block; color: inherit; }
+
+    .status {
+      min-width: 108px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      padding: 5px 7px;
+    }
+    .todo { color: #f5d98e; background: #3a311f; border-color: #67552b; }
+    .progress { color: #9ed5f6; background: #203443; border-color: #315a73; }
+    .done { color: #a3e2b5; background: #20392a; border-color: #356844; }
+    .review { color: #d2b9f4; background: #322844; border-color: #5b4676; }
+    .blocker { color: #ffaaaa; background: #422626; border-color: #703b3b; }
+    .backlog { color: #b8b8b8; background: #2b2b2b; border-color: #464646; }
+    .empty { color: var(--faint); }
+    footer { margin-top: 28px; color: var(--faint); font-size: 12px; }
+
+    @media (max-width: 700px) {
+      main { width: 94vw; margin-top: 20px; }
+      header { padding-left: 3vw; padding-right: 3vw; }
+      .day-title { padding: 11px 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PhaseWise AI Team Board</h1>
+    <p>Four-day delivery plan · Five team members</p>
+  </header>
+
+  <main>
+    <h2>Daily delivery plan</h2>
+    <p class="day-description">Each day has clear ownership.</p>
+
+    <section class="day-card">
+      <div class="day-title"><h3>Day 1 — Foundations</h3><span>Contracts and skeletons</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Member</th><th>Today’s outcome</th><th>Commit</th><th>PR target</th><th>Files to commit</th></tr></thead>
+          <tbody>
+            <tr><td>Yashwanth</td><td>Set API contracts</td><td>Persistence and authentication</td><td>Integration branch</td><td class="files"><code>config/config.py</code><code>persistence/models.py</code><code>persistence/database.py</code><code>persistence/repository.py</code><code>access/password_security.py</code><code>access/permissions.py</code><code>run_database_setup.py</code></td></tr>
+            <tr><td>Karthik</td><td>Stabilize data loading</td><td>Cleaning pipeline foundation</td><td>Yashwanth</td><td class="files"><code>data_pipeline/dataset_loader.py</code><code>data_pipeline/common_cleaning.py</code><code>data_pipeline/application_cleaning.py</code><code>data_pipeline/history_cleaning.py</code><code>data_pipeline/connection_log_cleaning.py</code><code>data_pipeline/document_cleaning.py</code><code>data_pipeline/sentence_cleaning.py</code></td></tr>
+            <tr><td>Yash</td><td>Define workflow state</td><td>LangGraph skeleton</td><td>Yashwanth</td><td class="files"><code>agentic/state.py</code><code>agentic/graph.py</code><code>agentic/__init__.py</code></td></tr>
+            <tr><td>Janavi</td><td>Extract and split PDFs</td><td>RAG foundation</td><td>Yashwanth</td><td class="files"><code>knowledge/pdf_extraction.py</code><code>knowledge/chunk_splitting.py</code><code>knowledge/__init__.py</code></td></tr>
+            <tr><td>Aparna</td><td>Build dashboard shell</td><td>Streamlit API client</td><td>Yashwanth</td><td class="files"><code>dashboard/ui.py</code><code>dashboard/api_client.py</code><code>dashboard/__init__.py</code><code>run_dashboard.py</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="day-card" style="margin-top:20px">
+      <div class="day-title"><h3>Day 2 — Core features</h3><span>Component implementation</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Member</th><th>Today’s outcome</th><th>Commit</th><th>PR target</th><th>Files to commit</th></tr></thead>
+          <tbody>
+            <tr><td>Yashwanth</td><td>Implement sign-in API</td><td>Routes and schemas</td><td>Integration branch</td><td class="files"><code>api/schemas.py</code><code>api/routes.py</code><code>run_api_service.py</code></td></tr>
+            <tr><td>Karthik</td><td>Train core models</td><td>Features and model registry</td><td>Yashwanth</td><td class="files"><code>data_pipeline/feature_builder.py</code><code>data_pipeline/quality_profiler.py</code><code>modeling/model_registry.py</code><code>modeling/network_work_model.py</code><code>modeling/duration_model.py</code><code>modeling/sentence_model.py</code></td></tr>
+            <tr><td>Yash</td><td>Implement workflow nodes</td><td>Agents and graph</td><td>Yashwanth</td><td class="files"><code>agentic/agents.py</code><code>agentic/nodes.py</code><code>agentic/graph.py</code></td></tr>
+            <tr><td>Janavi</td><td>Build vector retrieval</td><td>Index and evidence tools</td><td>Yashwanth</td><td class="files"><code>knowledge/vector_index.py</code><code>knowledge/standard_reading.py</code><code>tools/retrieval_tools.py</code><code>tools/evidence_tools.py</code></td></tr>
+            <tr><td>Aparna</td><td>Build queue screens</td><td>Sign-in and application pages</td><td>Yashwanth</td><td class="files"><code>dashboard/sign_in.py</code><code>dashboard/application_queue.py</code><code>dashboard/application_detail.py</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="day-card" style="margin-top:20px">
+      <div class="day-title"><h3>Day 3 — Integration</h3><span>Connect the full flow</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Member</th><th>Today’s outcome</th><th>Commit</th><th>PR target</th><th>Files to commit</th></tr></thead>
+          <tbody>
+            <tr><td>Yashwanth</td><td>Expose workflow endpoints</td><td>Chat, decision, audit APIs</td><td>Integration branch</td><td class="files"><code>api/routes.py</code><code>api/schemas.py</code><code>persistence/repository.py</code><code>tools/decision_tools.py</code></td></tr>
+            <tr><td>Karthik</td><td>Connect predictions</td><td>Screening and prediction tools</td><td>Yashwanth</td><td class="files"><code>tools/prediction_tools.py</code><code>tools/screening_tools.py</code><code>tools/application_data_tools.py</code><code>run_model_training.py</code></td></tr>
+            <tr><td>Yash</td><td>Persist workflow state</td><td>Checkpoint and resume</td><td>Yashwanth</td><td class="files"><code>agentic/graph.py</code><code>agentic/nodes.py</code></td></tr>
+            <tr><td>Janavi</td><td>Connect assistant chat</td><td>Memory and record answers</td><td>Yashwanth</td><td class="files"><code>chat/connection_assistant.py</code><code>chat/conversation_memory.py</code><code>chat/record_answer.py</code><code>tools/notice_tools.py</code></td></tr>
+            <tr><td>Aparna</td><td>Build review screens</td><td>Decision, audit, chat pages</td><td>Yashwanth</td><td class="files"><code>dashboard/decision_queue.py</code><code>dashboard/audit_trail.py</code><code>dashboard/connection_chat.py</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="day-card" style="margin-top:20px">
+      <div class="day-title"><h3>Day 4 — Validation</h3><span>Test and release</span></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Member</th><th>Today’s outcome</th><th>Commit</th><th>PR target</th><th>Files to commit</th></tr></thead>
+          <tbody>
+            <tr><td>Yashwanth</td><td>Run full integration tests</td><td>Tests and startup scripts</td><td>Final merge</td><td class="files"><code>tests.py</code><code>run_all.sh</code><code>run_all.bat</code><code>README.md</code></td></tr>
+            <tr><td>Karthik</td><td>Validate model behavior</td><td>Evaluation and quality checks</td><td>Yashwanth</td><td class="files"><code>devtools/check_model_behaviour.py</code><code>run_data_pipeline.py</code><code>modeling/model_evaluation.py</code></td></tr>
+            <tr><td>Yash</td><td>Verify workflow gates</td><td>Ordering and decision tests</td><td>Yashwanth</td><td class="files"><code>agentic/agents.py</code><code>agentic/graph.py</code><code>agentic/nodes.py</code></td></tr>
+            <tr><td>Janavi</td><td>Verify grounded answers</td><td>RAG and indexing tests</td><td>Yashwanth</td><td class="files"><code>run_knowledge_indexing.py</code><code>devtools/demo_documents.py</code><code>chat/connection_assistant.py</code></td></tr>
+            <tr><td>Aparna</td><td>Verify dashboard states</td><td>Navigation and error handling</td><td>Yashwanth</td><td class="files"><code>dashboard/ui.py</code><code>dashboard/api_client.py</code><code>dashboard/sign_in.py</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <h2>Daily Kanban board</h2>
+    <p class="day-description">Update one row daily.</p>
+
+    <section class="day-card">
+      <div class="day-title"><h3>Day 1 status</h3><span>Foundations</span></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Member</th><th>Todo</th><th>In progress</th><th>Done</th><th>In review</th><th>Blocker</th><th>Backlog</th></tr></thead>
+        <tbody>
+          <tr><td>Yashwanth</td><td class="status todo">Define API contract</td><td class="status progress">Database setup</td><td class="status done">Team ownership</td><td class="status review">—</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+          <tr><td>Karthik</td><td class="status todo">Clean data modules</td><td class="status progress">Dataset loading</td><td class="status done">ML scope</td><td class="status review">—</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+          <tr><td>Yash</td><td class="status todo">Draft graph nodes</td><td class="status progress">Workflow state</td><td class="status done">LangGraph scope</td><td class="status review">—</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+          <tr><td>Janavi</td><td class="status todo">Create RAG tests</td><td class="status progress">PDF extraction</td><td class="status done">RAG scope</td><td class="status review">—</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+          <tr><td>Aparna</td><td class="status todo">Plan page navigation</td><td class="status progress">API client</td><td class="status done">UI scope</td><td class="status review">—</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="day-card" style="margin-top:20px">
+      <div class="day-title"><h3>Day 2 status</h3><span>Core features</span></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Member</th><th>Todo</th><th>In progress</th><th>Done</th><th>In review</th><th>Blocker</th><th>Backlog</th></tr></thead>
+        <tbody>
+          <tr><td>Yashwanth</td><td class="status todo">Add route tests</td><td class="status progress">Auth routes</td><td class="status done">API schemas</td><td class="status review">Day 1 PR</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+          <tr><td>Karthik</td><td class="status todo">Check model metrics</td><td class="status progress">Feature builder</td><td class="status done">Cleaning pipeline</td><td class="status review">Day 1 PR</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+          <tr><td>Yash</td><td class="status todo">Add graph tests</td><td class="status progress">Agents and nodes</td><td class="status done">State skeleton</td><td class="status review">Day 1 PR</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+          <tr><td>Janavi</td><td class="status todo">Test retrieval ranking</td><td class="status progress">Vector index</td><td class="status done">PDF chunking</td><td class="status review">Day 1 PR</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+          <tr><td>Aparna</td><td class="status todo">Add empty states</td><td class="status progress">Queue screen</td><td class="status done">Dashboard shell</td><td class="status review">Day 1 PR</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="day-card" style="margin-top:20px">
+      <div class="day-title"><h3>Day 3 status</h3><span>Integration</span></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Member</th><th>Todo</th><th>In progress</th><th>Done</th><th>In review</th><th>Blocker</th><th>Backlog</th></tr></thead>
+        <tbody>
+          <tr><td>Yashwanth</td><td class="status todo">Run endpoint smoke test</td><td class="status progress">Workflow endpoints</td><td class="status done">Auth integration</td><td class="status review">Day 2 PRs</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+          <tr><td>Karthik</td><td class="status todo">Tune prediction thresholds</td><td class="status progress">Tool integration</td><td class="status done">Model registry</td><td class="status review">Day 2 PR</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+          <tr><td>Yash</td><td class="status todo">Test resume path</td><td class="status progress">Checkpoint wiring</td><td class="status done">Workflow nodes</td><td class="status review">Day 2 PR</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+          <tr><td>Janavi</td><td class="status todo">Test chat memory</td><td class="status progress">Assistant chat</td><td class="status done">Vector retrieval</td><td class="status review">Day 2 PR</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+          <tr><td>Aparna</td><td class="status todo">Check role visibility</td><td class="status progress">Decision pages</td><td class="status done">Queue pages</td><td class="status review">Day 2 PR</td><td class="status blocker empty">—</td><td class="status backlog empty">—</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="day-card" style="margin-top:20px">
+      <div class="day-title"><h3>Day 4 status</h3><span>Validation</span></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Member</th><th>Todo</th><th>In progress</th><th>Done</th><th>In review</th><th>Blocker</th><th>Backlog</th></tr></thead>
+        <tbody>
+          <tr><td>Yashwanth</td><td class="status todo">Prepare release tag</td><td class="status progress">Full test suite</td><td class="status done">API integration</td><td class="status review">All component PRs</td><td class="status blocker empty">—</td><td class="status backlog">CI pipeline</td></tr>
+          <tr><td>Karthik</td><td class="status todo">Document metrics</td><td class="status progress">Model validation</td><td class="status done">ML integration</td><td class="status review">Day 3 PR</td><td class="status blocker empty">—</td><td class="status backlog">Model monitoring</td></tr>
+          <tr><td>Yash</td><td class="status todo">Document graph flow</td><td class="status progress">Workflow tests</td><td class="status done">Checkpoint integration</td><td class="status review">Day 3 PR</td><td class="status blocker empty">—</td><td class="status backlog">Retry policies</td></tr>
+          <tr><td>Janavi</td><td class="status todo">Document sources</td><td class="status progress">Grounding tests</td><td class="status done">Chat integration</td><td class="status review">Day 3 PR</td><td class="status blocker empty">—</td><td class="status backlog">RAG analytics</td></tr>
+          <tr><td>Aparna</td><td class="status todo">Polish final layout</td><td class="status progress">Dashboard testing</td><td class="status done">Review pages</td><td class="status review">Day 3 PR</td><td class="status blocker empty">—</td><td class="status backlog">UI component tests</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <footer>Update statuses during stand-up and before daily merge.</footer>
+  </main>
+</body>
+</html>
